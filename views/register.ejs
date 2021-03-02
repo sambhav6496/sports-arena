@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sports arena</title>
+    <link rel="stylesheet" href="register.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Oxygen&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="heading"><h1>Sports Arena</h1></div>
+    <div class="signup-page">
+      <div class="form-container">
+        <div class="form-heading">
+          <p>SignUp</p>
+        </div>
+        <div class="details">
+          <form
+            action="/api/register"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="input-container">
+              <label for="first-name">First Name</label><br />
+              <input
+                type="text"
+                name="firstName"
+                id="first-name"
+                placeholder="Enter your first name"
+              />
+            </div>
+            <div class="input-container">
+              <label for="last-name">Last Name</label><br />
+              <input
+                type="text"
+                name="lastName"
+                id="last-name"
+                placeholder="Enter your last name"
+              />
+            </div>
+            <div class="input-container">
+              <label for="email">Email</label><br />
+              <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Enter your Email"
+              />
+            </div>
+            <div class="input-container">
+              <label for="password">Password</label><br />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div>
+              <button type="submit" class="btn">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const firstName = document.querySelector("#first-name");
+      const lastName = document.querySelector("#last-name");
+      const email = document.querySelector("#email");
+      const password = document.querySelector("#password");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        fetch("/api/register", {
+          // Adding method type
+          method: "POST",
+          headers: { "Content-type": "application/json;charset=UTF-8" },
+
+          // Adding body or contents to send
+          body: JSON.stringify({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            password: password.value,
+          }),
+        })
+          // Converting to JSON
+          .then((response) => response.json())
+
+          // Displaying results to console
+          .then((json) => console.log(json));
+      });
+    </script>
+  </body>
+</html>
