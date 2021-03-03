@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const mongoose = require("mongoose");
 var MongoStore = require("connect-mongo")(session);
 
-const dbURL = "mongodb://localhost:27017/Sports-Arena";
+const dbURL = "mongodb://localhost:27017/Sports-Arena" ;
 const dbOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
