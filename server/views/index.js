@@ -1,7 +1,6 @@
 const express = require("express");
-const router = require("express").Router();
-
-router.use(express.static("public"));
+import { Router } from 'express';
+const router = Router();
 router.get("/register", (req, res) => {
   res.render("register");
 });
