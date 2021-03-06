@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sports arena</title>
-    <link rel="stylesheet" href="/login.css" />
+    <link rel="stylesheet" href="/css/login.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -47,30 +47,6 @@
         </div>
       </div>
     </div>
-    <script>
-      const form = document.querySelector("form");
-      const email = document.querySelector("#email");
-      const password = document.querySelector("#password");
-      consloe.log([email.value, password.value]);
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        fetch("/api/login", {
-          // Adding method type
-          method: "POST",
-          headers: { "Content-type": "application/json;charset=UTF-8" },
-
-          // Adding body or contents to send
-          body: JSON.stringify({
-            email: email.value,
-            password: password.value,
-          }),
-        })
-          // Converting to JSON
-          .then((response) => response.json())
-
-          // Displaying results to console
-          .then((json) => console.log(json));
-      });
-    </script>
+    <script src= "/javascript/login.js"></script>
   </body>
 </html>

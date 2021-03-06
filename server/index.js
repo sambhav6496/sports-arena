@@ -2,13 +2,11 @@ import express from "express";
 import bodyParser from "body-parser";
 import session from 'express-session';
 import mongoose from 'mongoose';
-import { render } from "ejs";
 require("babel-core/register");
 require("babel-polyfill");
 
-const Auth = require("./api/auth/index");
-const product = require("./api/product/index");
-const sportsArena = require("./views");
+const AuthRoutes = require("./routes/auth");
+const ProductRoutes = require("./routes/product");
 const app = express();
 
 app.use(
@@ -18,6 +16,7 @@ app.use(
 );
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+
 app.use(bodyParser.json());
 
 
@@ -31,25 +30,17 @@ const dbOptions = {
   useFindAndModify: false,
 };
 const connection =  mongoose.createConnection(dbURL, dbOptions);
-
-// const sessionStore = new MongoStore({
-//   mongooseConnection: connection,
-//   collection: "sessions",
-// });
 app.use(
   session({
     secret: "secret key",
     resave: false,
     saveUninitialized: true,
-    cookie: {
-      maxAge: 24 * 60 * 60 * 1000,
-    },
   })
 );
 
 
-app.use("/api", product, Auth);
-app.use("/sportsArena", sportsArena);
+app.use("/", AuthRoutes);
+app.use("/product", ProductRoutes);
 
 app.get("/session", (req, res) => {
   console.log(req.session.userDetails);
