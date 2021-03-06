@@ -6,7 +6,7 @@ const password = document.querySelector("#password");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  fetch("/api/register", {
+  fetch("/register", {
     // Adding method type
     method: "POST",
     headers: { "Content-type": "application/json;charset=UTF-8" },
@@ -23,5 +23,8 @@ form.addEventListener("submit", function (e) {
     .then((response) => response.json())
 
     // Displaying results to console
-    .then((json) => console.log(json));
+    .then((json) => console.log(json))
+    .catch(error => {
+      console.log(error);
+    });
 });
