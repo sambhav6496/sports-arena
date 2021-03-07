@@ -40,9 +40,9 @@ mongoose.connection.on("error", function (error) {
   console.log(error);
 });
 
-
-app.use("/", AuthRoutes);
-app.use("/product", ProductRoutes);
+require('./routes')(app);
+// app.use("/", AuthRoutes);
+// app.use("/product", ProductRoutes);
 
 app.get("/session", (req, res) => {
   console.log(req.session.user);
