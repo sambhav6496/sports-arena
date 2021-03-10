@@ -14,7 +14,6 @@ class ProductRouter {
     try {
       const productId = req.params.Id;
       const getProduct = await ProductHelper.getProduct(productId);
-      console.log(req.session.userDetails);
       return res.status(200).json(getProduct);
     } catch (error) {
       return res.status(400).json(error);

@@ -31,7 +31,7 @@ class ProductHelper {
     throw { error: "user with given id not found" };
   }
   async showProduct() {
-    const product = await Product.find({});
+    const product = await Product.find();
     return product;
   }
 }

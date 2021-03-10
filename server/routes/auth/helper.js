@@ -1,7 +1,8 @@
-const User = require("../../models/Users");
+const User = require('../../models/Users');
 
 class AuthHelper {
   async register(userDetails) {
+    console.log("reched")
     const existingUser = await User.findOne({ email: userDetails.email });
     if (existingUser) {
       throw { email: "Email already exist" };

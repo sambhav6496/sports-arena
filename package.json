@@ -2,7 +2,7 @@
   "name": "sports-arena",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "./dist-server/bin/www",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run dev",
@@ -12,7 +12,7 @@
     "prod": "SETNODE_ENV=production & npm-run-all build server",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
-    "watch:dev": "nodemon"
+    "watch:dev": "nodemon --exec \"npm run build && node ./dist-server/bin/www\" -e js --ignore /dist-server/"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "nodemon": "^2.0.7"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.9",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",

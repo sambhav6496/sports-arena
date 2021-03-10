@@ -17,6 +17,11 @@ const userSchema = {
     type: String,
     required: [true, enums.validationError.User.no_Password],
   },
+  role: {
+    type: String,
+    required: true,
+    default: enums.constants.ROLE[1],
+  },
 };
 const User = mongoose.model("User", userSchema);
 

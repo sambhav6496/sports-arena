@@ -1,11 +1,4 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "modules": false,
-        "useBuiltIns": "usage"
-      }
-    ]
-  ]
+  "presets": ["es2015", "stage-2"]
+ 
 }
