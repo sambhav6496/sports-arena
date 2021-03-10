@@ -5,11 +5,11 @@
   "main": "./dist-server/bin/www",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run dev",
+    "start": "npm run prod",
     "build": "npm-run-all clean transpile",
     "server": "node ./dist-server/bin/www",
     "dev": "SET NODE_ENV=development & npm-run-all build server",
-    "prod": "SETNODE_ENV=production & npm-run-all build server",
+    "prod": "NODE_ENV=production & npm-run-all build server",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
     "watch:dev": "nodemon --exec \"npm run build && node ./dist-server/bin/www\" -e js --ignore /dist-server/"

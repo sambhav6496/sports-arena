@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/admin/product" method="post">
+      <div>
+        <label for="name">Product name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <input type="text" name="category" id="category" />
+      </div>
+      <div>
+        <label for="material">Material</label>
+        <input type="text" name="material" id="material" />
+      </div>
+      <div>
+        <label for="typeOfSport">Type of Sport</label>
+        <input type="text" name="typeOfSport" id="typeOfSport" />
+      </div>
+      <div>
+        <label for="color">Color</label>
+        <input type="text" name="color" id="color" />
+      </div>
+      <div>
+        <label for="url">Image url</label>
+        <input type="text" name="url" id="url" />
+      </div>
+      <div>
+        <label for="alternateText">Alternate Text</label>
+        <input type="text" name="alternateText" id="alternateText" />
+      </div>
+      <button type="submit">addProduct</button>
+    </form>
+    <script src="/javascript/addProduct.js"></script>
+  </body>
+</html>

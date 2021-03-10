@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-console.log([email.value, password.value]);
+consloe.log([email.value, password.value]);
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   fetch("/login", {

@@ -3,13 +3,13 @@ const firstName = document.querySelector("#first-name");
 const lastName = document.querySelector("#last-name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+
 form.addEventListener("submit", function (e) {
-  console.log([email.value, password.value]);
   e.preventDefault();
   fetch("/register", {
     // Adding method type
     method: "POST",
-    // headers: { "Content-type": "application/json;charset=UTF-8" },
+    headers: { "Content-type": "application/json;charset=UTF-8" },
 
     // Adding body or contents to send
     body: JSON.stringify({
@@ -24,7 +24,7 @@ form.addEventListener("submit", function (e) {
 
     // Displaying results to console
     .then((json) => console.log(json))
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
     });
 });

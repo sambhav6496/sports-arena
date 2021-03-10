@@ -21,7 +21,11 @@
           <p>SignUp</p>
         </div>
         <div class="details">
-          <form action="/register" method="POST" enctype="multipart/form-data">
+          <form
+            action="/api/register"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <div class="input-container">
               <label for="first-name">First Name</label><br />
               <input
@@ -65,33 +69,6 @@
         </div>
       </div>
     </div>
-    <script>
-      const form = document.querySelector("form");
-      const firstName = document.querySelector("#first-name");
-      const lastName = document.querySelector("#last-name");
-      const email = document.querySelector("#email");
-      const password = document.querySelector("#password");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        fetch("/register", {
-          // Adding method type
-          method: "POST",
-
-          // Adding body or contents to send
-          body: JSON.stringify({
-            firstName: firstName.value,
-            lastName: lastName.value,
-            email: email.value,
-            password: password.value,
-          }),
-        })
-          // Converting to JSON
-          .then((response) => response.json())
-
-          // Displaying results to console
-          .then((json) => console.log(json));
-      });
-    </script>
+    <script src="/javascript/register.js"></script>
   </body>
 </html>
