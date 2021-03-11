@@ -19,6 +19,11 @@ class AdminProductRoutes {
       console.log(error);
     }
   }
+  rendAddProduct = (req, res) => {
+      res.status(200).render('addProduct')
+  }
+
+
 }
 
 module.exports = new AdminProductRoutes();

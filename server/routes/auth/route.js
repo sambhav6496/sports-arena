@@ -10,7 +10,7 @@ class AuthRouter {
         email: req.body.email,
         password: req.body.password,
       };
-      const user = await AuthHelper.register(userDetails);
+      const { user } = await AuthHelper.register(userDetails);
       req.session.user = user;
       // console.log(res.session.user);
       return res.status(200).json(user);
@@ -26,7 +26,7 @@ class AuthRouter {
         email: req.body.email,
         password: req.body.password,
       };
-      const user = await AuthHelper.login(userDetails);
+      const { user } = await AuthHelper.login(userDetails);
       if (user) {
         req.session.user = user;
         return res.status(200).redirect("/product");
