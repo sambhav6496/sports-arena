@@ -4,20 +4,15 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #2a0436;
-  font-family: "Lobster", cursive;
-  font-size: 1.8rem;
-}
 .heading {
     color: #2c7070;
   text-align: center;
 }
 .form-container {
   display: flex;
-  height: 440px;
+  height: 460px;
   width: 320px;
-  background: #14163e;
+  background: #18ba8f;
   align-items: center;
   flex-direction: column;
   box-shadow: 5px 10px;
@@ -40,9 +35,9 @@ label {
   font-family: "Oxygen", sans-serif;
 }
 input {
-  background: #3e0052;
+  background: #1e6652;
   width: 250px;
-  color: #AEB0BF;
+  color:white;
   font-size: 1rem;
   padding: 5px 0;
   border-radius: 10px;
@@ -53,11 +48,11 @@ input {
 .form-heading {
   font-size: 1.8rem;
   font-weight: bold;
-  margin: 20px;
+  margin-top: 5px;
   text-decoration: none;
   color: #808494;
 }
-.btn {
+.btns {
   width: 250px;
   font-size: 1.2rem;
   margin-top: 10px;
@@ -68,3 +63,7 @@ input {
   padding: 10px;
   font-family: "Oxygen", sans-serif;
 }
+::placeholder{
+  color: black;
+}
+
