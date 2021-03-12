@@ -2,7 +2,7 @@ const router = require("express").Router();
 const AuthRouter = require("./route");
 
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", {userStatus : "login"});
 });
 
 router.get("/register", (req, res) => {

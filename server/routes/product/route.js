@@ -44,8 +44,15 @@ class ProductRouter {
   async showProduct(req, res) {
     try {
       const products = await ProductHelper.showProduct();
-      res.render("home", { products: products });
-    } catch (error) {}
+      const user = req.session.user
+      if(user){
+        return res.render("home", { userStatus: user.firstName , products: products });
+      }else{
+        return res.render("home", { userStatus: "login" , products: products });
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 
