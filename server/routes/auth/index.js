@@ -1,12 +1,10 @@
 const router = require("express").Router();
 const AuthRouter = require("./route");
 
-router.get("/login", (req, res) => {
-  res.render("login", {userStatus : "login"});
-});
+router.get("/login", AuthRouter.loginStatus)
 
 router.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", { userName: "Register", userStatus: false });
 });
 
 router.post("/login", AuthRouter.login);

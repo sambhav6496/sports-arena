@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                  <a
+                  <p
                     class="nav-link dropdown-toggle"
                     href="#"
                     id="navbarDropdown"
@@ -51,11 +51,15 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                   <%= userStatus %>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Football</a></li>
-                  </ul>
+                   <%= userName %>
+                </p>
+                   
+                    <% if( userStatus == true){%>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="">Account</a></li>
+                        <li><a href="/login" class="dropdown-item" id="logout">logout</a></li>
+                      </ul>
+                    <%}%>
                 </li>
               </ul>
             </div>

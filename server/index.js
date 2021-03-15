@@ -44,9 +44,10 @@ require("./routes")(app);
 // app.use("/", AuthRoutes);
 // app.use("/product", ProductRoutes);
 
-app.get("/session", (req, res) => {
-  console.log(req.session.user);
-  res.json({ user: req.session.user });
-});
+app.get("/logout", (req , res) =>{
+  res.redirect("/login");
+  req.session.destroy()
+  console.log("reached")
+})
 
 module.exports = app;

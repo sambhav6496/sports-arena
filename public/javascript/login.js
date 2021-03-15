@@ -1,7 +1,6 @@
 const form = document.querySelector("form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-consloe.log([email.value, password.value]);
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   fetch("/login", {
@@ -19,5 +18,8 @@ form.addEventListener("submit", function (e) {
     .then((response) => response.json())
 
     // Displaying results to console
-    .then((json) => console.log(json));
+    .then((json) => console.log(json))
+    .catch(error => {
+      console.log(error);
+    });
 });

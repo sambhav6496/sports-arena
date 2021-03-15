@@ -11,6 +11,7 @@
     <!-- products start -->
     <div class="products-container">
       <% for(let i=0; i<products.length; i++){%>
+        <a href="">
       <div class="product">
         <div class="product-image">
           <img
@@ -23,7 +24,9 @@
           <div class="price">rs100</div>
         </div>
       </div>
+      </a>
       <%}%>
     </div>
+    <script src="/javascript/home.js"></script>
     <!-- products end -->
     <%- include('footer') -%>

@@ -46,9 +46,9 @@ class ProductRouter {
       const products = await ProductHelper.showProduct();
       const user = req.session.user
       if(user){
-        return res.render("home", { userStatus: user.firstName , products: products });
+        return res.render("home", { userName: user.firstName , products: products, userStatus : true });
       }else{
-        return res.render("home", { userStatus: "login" , products: products });
+        return res.render("home", { userName: "login", products: products, userStatus : false });
       }
     } catch (error) {
       console.log(error)
